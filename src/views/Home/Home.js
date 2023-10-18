@@ -5,6 +5,7 @@ import Main from 'layouts/Main';
 // import Container from 'components/Container';
 import {
   Hero,
+  // HeroSlider
 } from './components';
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
     <Box sx={{ overflowX: 'hidden' }}>
       <Main bgcolor={'background.paper'}>
         <Hero />
-     
+        {/* <HeroSlider /> */}
         <Box
           sx={{
             backgroundImage: `linear-gradient(to bottom, ${alpha(
