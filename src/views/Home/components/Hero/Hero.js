@@ -1,79 +1,78 @@
-/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { alpha, useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { alpha, useTheme } from '@mui/material/styles';
 
-const mock = [
+import Container from 'components/Container';
+
+const images = [
   {
-    title: 'Built for developers',
-    subtitle:
-      'theFront is built to make your life easier. Variables, build tooling, documentation, and reusable components.',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
-        />
-      </svg>
-    ),
+    group: [
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img1.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img1--dark.png',
+      },
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img4.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img4--dark.png',
+      },
+    ],
   },
   {
-    title: 'Designed to be modern',
-    subtitle:
-      'Designed with the latest design trends in mind. theFront feels modern, minimal, and beautiful.',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-        />
-      </svg>
-    ),
+    group: [
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img13.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img13--dark.png',
+      },
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img10.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img10--dark.png',
+      },
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img7.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img7--dark.png',
+      },
+    ],
   },
   {
-    title: 'Documentation for everything',
-    subtitle:
-      'We\'ve written extensive documentation for components and tools, so you never have to reverse engineer anything.',
-    icon: (
-      <svg
-        height={24}
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-        />
-      </svg>
-    ),
+    group: [
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img6.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img6--dark.png',
+      },
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img24.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img24--dark.png',
+      },
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img17.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img17--dark.png',
+      },
+      {
+        cover:
+          'https://assets.maccarianagency.com/screenshots/the-front/img12.png',
+        coverDark:
+          'https://assets.maccarianagency.com/screenshots/the-front/img12--dark.png',
+      },
+    ],
   },
 ];
 
@@ -84,103 +83,148 @@ const Hero = () => {
   });
 
   return (
-    <Box>
-      <Box marginBottom={4}>
-        <Box marginBottom={2}>
-          <Typography
-            variant="h3"
-            color="text.primary"
-            align={'center'}
-            sx={{
-              fontWeight: 700,
-            }}
-          >
-            Welcome to theFront.
-            <br />
-            Develop anything your business needs.
-          </Typography>
-          <Typography
-            variant="h6"
-            component="p"
-            color="text.secondary"
-            sx={{ fontWeight: 400 }}
-            align={'center'}
-          >
-            Build a beautiful, modern website with flexible, fully customizable,
-            atomic MUI components.
-          </Typography>
-        </Box>
-        <Box
-          display="flex"
-          flexDirection={{ xs: 'column', sm: 'row' }}
-          alignItems={{ xs: 'stretched', sm: 'center' }}
-          justifyContent={'center'}
-        >
-          <Button
-            component={'a'}
-            variant="contained"
-            color="primary"
-            size="large"
-            fullWidth={isMd ? false : true}
-            href={'https://mui.com/store/items/the-front-landing-page/'}
-            target={'_blank'}
-          >
-            Purchase now
-          </Button>
-          <Box
-            marginTop={{ xs: 2, sm: 0 }}
-            marginLeft={{ sm: 2 }}
-            width={{ xs: '100%', md: 'auto' }}
-          >
-            <Button
-              component={'a'}
-              href={'https://thefront.maccarianagency.com/docs/introduction'}
-              target={'blank'}
-              variant="outlined"
-              color="primary"
-              size="large"
-              fullWidth={isMd ? false : true}
+    <Box
+      sx={{
+        backgroundImage: `linear-gradient(to bottom, ${alpha(
+          theme.palette.background.paper,
+          0,
+        )}, ${alpha(theme.palette.alternate.main, 1)} 100%)`,
+        backgroundRepeat: 'repeat-x',
+        position: 'relative',
+      }}
+    >
+      <Box paddingY={{ xs: 0, sm: '4rem', md: '8rem' }}>
+        <Container>
+          <Box maxWidth={{ xs: 1, sm: '50%' }}>
+            <Typography
+              variant="h2"
+              color="text.primary"
+              gutterBottom
+              sx={{
+                fontWeight: 700,
+              }}
             >
-              View documentation
-            </Button>
+              Turn your ideas
+              <br />
+              into{' '}
+              <Typography
+                color={'primary'}
+                component={'span'}
+                variant={'inherit'}
+                sx={{
+                  background: `linear-gradient(180deg, transparent 82%, ${alpha(
+                    theme.palette.secondary.main,
+                    0.3,
+                  )} 0%)`,
+                }}
+              >
+                success.
+              </Typography>
+            </Typography>
+            <Typography
+              variant="h6"
+              component="p"
+              color="text.secondary"
+              sx={{ fontWeight: 400 }}
+            >
+              theFront will make your product look modern and professional while
+              saving you precious time.
+            </Typography>
+            <Box
+              display="flex"
+              flexDirection={{ xs: 'column', sm: 'row' }}
+              alignItems={{ xs: 'stretched', sm: 'flex-start' }}
+              marginTop={4}
+            >
+              <Button
+                component={'a'}
+                variant="contained"
+                color="primary"
+                size="large"
+                fullWidth={isMd ? false : true}
+                href={'/home'}
+              >
+                View pages
+              </Button>
+              <Box
+                marginTop={{ xs: 2, sm: 0 }}
+                marginLeft={{ sm: 2 }}
+                width={{ xs: '100%', md: 'auto' }}
+              >
+                <Button
+                  component={'a'}
+                  href={'https://thefront.maccarianagency.com/docs/introduction'}
+                  target={'blank'}
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  fullWidth={isMd ? false : true}
+                >
+                  Documentation
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        </Container>
+        <Box
+          sx={{
+            transform: 'rotate(-20deg)',
+            display: { xs: 'none', sm: 'block' },
+          }}
+        >
+          <Box
+            display={'flex'}
+            width={'50rem'}
+            left={'50%'}
+            top={0}
+            position={'absolute'}
+            sx={{ transform: 'translate3d(20%, -50%, 0)' }}
+          >
+            {images.map((item, i) => (
+              <Box key={i} marginTop={{ sm: -(i * 16) }} marginX={1}>
+                {item.group.map((g, j) => (
+                  <Box
+                    key={j}
+                    padding={1}
+                    bgcolor={'background.paper'}
+                    borderRadius={2}
+                    boxShadow={3}
+                    marginTop={2}
+                  >
+                    <Box
+                      component={'img'}
+                      loading="lazy"
+                      src={
+                        theme.palette.mode === 'dark' ? g.coverDark : g.cover
+                      }
+                      height={1}
+                      width={1}
+                      maxWidth={320}
+                    />
+                  </Box>
+                ))}
+              </Box>
+            ))}
           </Box>
         </Box>
       </Box>
-      <Grid container spacing={2}>
-        {mock.map((item, i) => (
-          <Grid item xs={12} md={4} key={i}>
-            <Box width={1} height={1} data-aos={'fade-up'}>
-              <Box
-                display={'flex'}
-                flexDirection={'column'}
-                alignItems={'center'}
-              >
-                <Box
-                  component={Avatar}
-                  width={60}
-                  height={60}
-                  marginBottom={2}
-                  bgcolor={alpha(theme.palette.primary.main, 0.1)}
-                  color={theme.palette.primary.main}
-                >
-                  {item.icon}
-                </Box>
-                <Typography
-                  variant={'h6'}
-                  gutterBottom
-                  sx={{ fontWeight: 500 }}
-                  align={'center'}
-                >
-                  {item.title}
-                </Typography>
-                <Typography align={'center'} color="text.secondary">
-                  {item.subtitle}
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+      <Box
+        component={'svg'}
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1920 100.1"
+        sx={{
+          width: '100%',
+          marginBottom: theme.spacing(-1),
+        }}
+      >
+        <path
+          fill={theme.palette.background.paper}
+          d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"
+        ></path>
+      </Box>
     </Box>
   );
 };

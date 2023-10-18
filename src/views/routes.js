@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  IndexView,
   Home as HomeView,
   Faq as FaqView,
   ContactPage as ContactPageView,
@@ -13,10 +12,6 @@ import {
 const routes = [
   {
     path: '/',
-    renderer: (params = {}) => <IndexView {...params} />,
-  },
-  {
-    path: '/home',
     renderer: (params = {}) => <HomeView {...params} />,
   },
   {
