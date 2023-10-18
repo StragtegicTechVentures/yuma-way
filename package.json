@@ -3,7 +3,7 @@
   "author": "yuma way",
   "email": "",
   "version": "5.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
