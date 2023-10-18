@@ -14,8 +14,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // logos
-import Logo from "../../../../logos/yuma-way-logo.png";
-import LogoNegative from "../../../../logos/yuma-way-negative-logo.png";
+import Logo from '../../../../logos/gardens-logo.png';
+import LogoNegative from '../../../../logos/gardens-logo-negative.png';
 
 const FooterStandard = () => {
   const theme = useTheme();
