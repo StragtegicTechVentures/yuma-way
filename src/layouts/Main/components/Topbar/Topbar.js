@@ -4,11 +4,15 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { alpha, useTheme } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-import Logo from '../../../../logos/yuma-way-logo.png';
-import LogoNegative from '../../../../logos/yuma-way-negative-logo.png';
 
+// logos
+import Logo from '../../../../logos/gardens-logo.png';
+import LogoNegative from '../../../../logos/gardens-logo-negative.png';
+
+// components
 import { NavItem } from './components';
 
+//theme toggler
 import ThemeModeToggler from 'components/ThemeModeToggler';
 
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
