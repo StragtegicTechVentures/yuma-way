@@ -1,99 +1,32 @@
 import React from 'react';
 import Slider from 'react-slick';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { alpha, useTheme } from '@mui/material/styles';
+// import useMediaQuery from '@mui/material/useMediaQuery';
+import {  useTheme } from '@mui/material/styles';
+
+import primaryHero from '../../../../banners/primary-hb.png'
+import monthlySpecialsHero from '../../../../banners/november-hb.png'
 
 import Container from 'components/Container';
 
 const Hero = () => {
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
-    defaultMatches: true,
-  });
 
-  const LeftSide = () => (
-    <Box data-aos={isMd ? 'fade-right' : 'fade-up'}>
-      <Typography
-        sx={{
-          textTransform: 'uppercase',
-          fontWeight: 'medium',
-        }}
-        gutterBottom
-        color={'text.secondary'}
-      >
-        Coworking spaces
-      </Typography>
-      <Box marginBottom={2}>
-        <Typography
-          variant="h2"
-          color="text.primary"
-          sx={{
-            fontWeight: 700,
-          }}
-        >
-          Coworking{' '}
-          <Typography
-            color={'primary'}
-            component={'span'}
-            variant={'inherit'}
-            sx={{
-              background: `linear-gradient(180deg, transparent 82%, ${alpha(
-                theme.palette.secondary.main,
-                0.3,
-              )} 0%)`,
-            }}
-          >
-            made simple
-          </Typography>
-        </Typography>
-      </Box>
-      <Box marginBottom={3}>
-        <Typography variant="h6" component="p" color="text.secondary">
-          For entrepreneurs, startups and freelancers. Discover coworking spaces
-          designed to inspire and to connect you to a community of motivated
-          people.
-        </Typography>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection={{ xs: 'column', sm: 'row' }}
-        alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-      >
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          fullWidth={isMd ? false : true}
-        >
-          Book a space
-        </Button>
-        <Box
-          component={Button}
-          variant="outlined"
-          color="primary"
-          size="large"
-          marginTop={{ xs: 2, sm: 0 }}
-          marginLeft={{ sm: 2 }}
-          fullWidth={isMd ? false : true}
-        >
-          Browse spaces
-        </Box>
-      </Box>
-    </Box>
-  );
-
-  const RightSide = () => {
+  const SlideDeck = () => {
     const sliderOpts = {
-      dots: false,
+      dots: true,
       infinite: true,
+      autoplay: true,
+      autoplaySpeed: 5000,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      swipeToSlide: true,
       arrows: true,
+      // cssEase: "linear"
     };
 
     return (
@@ -109,8 +42,8 @@ const Hero = () => {
           '& .slick-prev, & .slick-next': {
             zIndex: 2,
             bottom: 0,
-            top: '100%',
-            left: '100%',
+            top: '50%',
+            left: '95%',
             right: 0,
             transform: `translate(-100%, calc(-100% - ${theme.spacing(2)}))`,
             marginLeft: theme.spacing(-2),
@@ -122,16 +55,20 @@ const Hero = () => {
           },
           '& .slick-prev': {
             marginLeft: theme.spacing(-7),
+            left: '10%',
           },
         }}
       >
         <Slider {...sliderOpts}>
-          {[
-            'https://assets.maccarianagency.com/backgrounds/img1.jpg',
-            'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-            'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-            'https://assets.maccarianagency.com/backgrounds/img25.jpg',
-          ].map((item) => (
+          {
+          [
+            primaryHero,
+            monthlySpecialsHero,
+            // 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
+            // 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
+            // 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
+          ]
+          .map((item) => (
             <Box
               key={item}
               component={'img'}
@@ -156,68 +93,8 @@ const Hero = () => {
         overflow: 'hidden',
       }}
     >
-      <Container paddingX={0} paddingY={0} maxWidth={{ sm: 1, md: 1236 }}>
-        <Box
-          display={'flex'}
-          flexDirection={{ xs: 'column', md: 'row' }}
-          position={'relative'}
-          minHeight={{ xs: 'auto', md: 600 }}
-        >
-          <Box
-            width={1}
-            order={{ xs: 2, md: 1 }}
-            display={'flex'}
-            alignItems={'center'}
-          >
-            <Container>
-              <LeftSide />
-            </Container>
-          </Box>
-          <Box
-            sx={{
-              flex: { xs: '0 0 100%', md: '0 0 50%' },
-              position: 'relative',
-              maxWidth: { xs: '100%', md: '50%' },
-              order: { xs: 1, md: 2 },
-            }}
-          >
-            <Box
-              sx={{
-                width: { xs: 1, md: '50vw' },
-                height: '100%',
-                position: 'relative',
-              }}
-            >
-              <Box
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  sx={{
-                    overflow: 'hidden',
-                    left: '0%',
-                    width: 1,
-                    height: 1,
-                    position: { xs: 'relative', md: 'absolute' },
-                    clipPath: {
-                      xs: 'none',
-                      md: 'polygon(10% 0%, 100% 0, 100% 100%, 0% 100%)',
-                    },
-                    shapeOutside: {
-                      xs: 'none',
-                      md: 'polygon(10% 0%, 100% 0, 100% 100%, 0% 100%)',
-                    },
-                  }}
-                >
-                  <RightSide />
-                </Box>
-              </Box>
-            </Box>
-          </Box>
-        </Box>
+      <Container paddingTop={'70px !important'} paddingX={0} paddingY={0} maxWidth={{ sm: 'auto', md: 'auto', lg: 'auto', xl: '100%' }}>        
+        <SlideDeck />   
       </Container>
       <Divider />
     </Box>

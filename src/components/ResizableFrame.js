@@ -11,6 +11,7 @@ import Container from 'components/Container';
 
 const viewportWidthMap = {
   desktop: '100%',
+  laptop: '100%',
   tablet: 850,
   mobile: 480,
 };
