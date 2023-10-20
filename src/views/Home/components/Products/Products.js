@@ -59,7 +59,7 @@ const Products = () => {
           <Grid
             item
             xs={12}
-            md={4}
+            md={6}
             lg={3}
             key={i}
             data-aos={'fade-up'}
