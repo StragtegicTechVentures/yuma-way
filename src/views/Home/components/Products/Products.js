@@ -53,6 +53,14 @@ const Products = () => {
         >
           Massive Selection of THC the finest Products
         </Typography>
+        <Typography
+          variant="h6"
+          align={'center'}
+          color={'text.secondary'}
+          data-aos={'fade-up'}
+        >
+          Visit your nearest Yuma Way location for access to the largest selection of cannabis products.
+        </Typography>
       </Box>
       <Grid container spacing={4}>
         {mock.map((item, i) => (
