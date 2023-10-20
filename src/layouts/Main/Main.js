@@ -8,9 +8,10 @@ import AppBar from '@mui/material/AppBar';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import Container from 'components/Container';
-// import TopNav from 'components/TopNav';
 
 import { Topbar, Sidebar, Footer } from './components';
+// import { Topbar, Sidebar, Footer } from './components';
+// import { FooterOne } from './components/Footer/DetailedFooter';
 
 import pages from '../navigation';
 

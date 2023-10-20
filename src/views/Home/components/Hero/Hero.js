@@ -7,8 +7,10 @@ import Divider from '@mui/material/Divider';
 // import useMediaQuery from '@mui/material/useMediaQuery';
 import {  useTheme } from '@mui/material/styles';
 
+//hero banner images
 import primaryHero from '../../../../banners/primary-hb.png'
 import monthlySpecialsHero from '../../../../banners/november-hb.png'
+import salesHero from '../../../../banners/sale-banner-hb.png'
 
 import Container from 'components/Container';
 
@@ -60,13 +62,10 @@ const Hero = () => {
         }}
       >
         <Slider {...sliderOpts}>
-          {
-          [
+          {[
             primaryHero,
             monthlySpecialsHero,
-            // 'https://assets.maccarianagency.com/backgrounds/img3.jpg',
-            // 'https://assets.maccarianagency.com/backgrounds/img24.jpg',
-            // 'https://assets.maccarianagency.com/backgrounds/img25.jpg',
+            salesHero,
           ]
           .map((item) => (
             <Box
